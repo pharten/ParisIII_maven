@@ -23,8 +23,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/PaulHartenSpace/Oxygen32/plugins/org.eclipse.ui.forms_3.7.101.v20170815-1446.jar"/>
-	<classpathentry kind="lib" path="C:/PaulHartenSpace/Oxygen32/plugins/BrowserLauncher2-1_3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -122,7 +122,7 @@ public class StateTest {
 		state1.setScreen0StackOption(1);
 		state1.setScreen0TableHeader("Mol%");
 		
-		String fileName = "ParisIIITest/src/data/state.xml";
+		String fileName = "data/state.xml";
 		state1.setFileName(fileName);
 		state1.setSystemTemp("30.0");
 		state1.setSystemPres("1.1");

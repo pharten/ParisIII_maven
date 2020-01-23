@@ -3,6 +3,7 @@ package parisInit;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -56,7 +57,18 @@ public class State extends Object implements Serializable, Cloneable {
 	public static State readFromFile(String filename) throws IOException, ClassNotFoundException {
 		State state;
 		
-		FileInputStream fis = new FileInputStream(filename);
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream(filename);
+		} catch (FileNotFoundException e) {
+			filename = ClassLoader.getSystemResource(filename).getPath();
+			fis = new FileInputStream(filename);
+		} catch (Exception e){
+			throw new IOException("File could not be found "+filename);
+		}
+		
+		if (fis==null) throw new IOException("File input stream cound not be created");
+		
 		if (filename.endsWith(".xml")) {
 			XMLDecoder decoder = new XMLDecoder(fis);
 			state = (State) decoder.readObject();
@@ -76,7 +88,19 @@ public class State extends Object implements Serializable, Cloneable {
 		
 		String filename = this.getFileName();
 		this.setFileName(null);
-		FileOutputStream fos = new FileOutputStream(filename);
+		
+		FileOutputStream fos;
+		try {
+			fos = new FileOutputStream(filename);
+		} catch (FileNotFoundException e) {
+			filename = ClassLoader.getSystemResource(filename).getPath();
+			fos = new FileOutputStream(filename);
+		} catch (Exception e) {
+			throw new IOException("File could not be found "+filename);
+		}
+	
+		if (fos==null) throw new IOException("File output stream cound not be created");
+		
 		if (filename.endsWith(".xml")) {
 			XMLEncoder encoder = new XMLEncoder(fos);
 			encoder.writeObject(this);
