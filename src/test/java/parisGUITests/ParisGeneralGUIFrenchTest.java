@@ -25,13 +25,14 @@ import parisWork.Screen1;
 import parisWork.Screen2;
 import parisWork.Screen3;
 
-public class ParisGeneralGUITest_in_French {
+public class ParisGeneralGUIFrenchTest {
 
 	
 	@Test
 	public void testParisGUI_SingleChemicalMixture_in_French() {
 		
-		java.util.Locale.setDefault(new Locale("FR"));
+		Locale orig = Locale.getDefault();
+		Locale.setDefault(new Locale("FR"));
 		
 		ParisWork window = new ParisWork();
 		Shell shell = window.getShell();
@@ -114,6 +115,8 @@ public class ParisGeneralGUITest_in_French {
 			text1 = textArray[0][0];
 
 			Assert.assertEquals("Screen3 textArray[0][0] is wrong", pf.format(25.0), text1.getText());
+			
+			Locale.setDefault(orig);
 
 			window.getShell().dispose();
 
