@@ -170,9 +170,9 @@ public class ChemicalsTest {
 		chemical2.setBoilingPoint(303.15);
 		chemical2.setMeltingPoint(273.15);
 		
-		chemicals1.writeByXML("data/chemicals2.xml");
+		chemicals1.writeByXML("src/main/java/data/chemicals2.xml");
 		
-		Chemicals chemicals2 = Chemicals.readFromFile("data/chemicals2.xml");
+		Chemicals chemicals2 = Chemicals.readFromFile("src/main/java/data/chemicals2.xml");
 		
 		Assert.assertEquals("Chemical lists are not same size", chemicals1.size(), chemicals2.size());
 		
@@ -189,8 +189,8 @@ public class ChemicalsTest {
 		Chemicals chemicals1, chemicals2;
 		Chemical chemical3, chemical4;
 		
-		chemicals1 = Chemicals.readFromFile("data/Chemicals.txt");
-		chemicals2 = Chemicals.readFromFile("data/Chemicals.xml");
+		chemicals1 = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
+		chemicals2 = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
 		
 		Assert.assertNotNull("Chemical list from txt file is null", chemicals1);
 		Assert.assertNotNull("Chemical list form xml file is null", chemicals2);
@@ -211,7 +211,7 @@ public class ChemicalsTest {
 		double vp, vpCalc;
 		int cnt0=0, cnt1=0, cnt2=0, cnt3=0, cnt4=0, cnt5=0, cnt6=0, cnt7=0, cnt8=0, cnt9=0;
 		
-		Chemicals chemicals = Chemicals.readFromFile("data/Chemicals.xml");
+		Chemicals chemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
 		chemicals.correctVaporPressureConstants();
 //		chemicals.filterForLiquidPhase(tempK);
 		

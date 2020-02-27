@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.lang.reflect.Field;
@@ -540,8 +541,12 @@ public class Chemicals extends Vector<Chemical> implements Serializable, Cloneab
 		int lineno = 0;
 
 		Chemicals chemicals = new Chemicals();
+		
+		// Maven file reader method
+		FileReader reader = new FileReader(new File(filePath));
 
-		InputStreamReader reader = new InputStreamReader(ClassLoader.getSystemResourceAsStream(filePath));
+		// Old file reader method
+		//InputStreamReader reader = new InputStreamReader(ClassLoader.getSystemResourceAsStream(filePath));
 		BufferedReader buf = new BufferedReader(reader);
 
 		String header = buf.readLine();	// read the column header line
@@ -849,14 +854,21 @@ public class Chemicals extends Vector<Chemical> implements Serializable, Cloneab
 	}
 	
 	private static Chemicals readByXML(String filename) throws IOException {
-		XMLDecoder decoder = new XMLDecoder(ClassLoader.getSystemResourceAsStream(filename));
+		// Maven input from filename
+		FileInputStream fis = new FileInputStream(new File(filename));
+		XMLDecoder decoder = new XMLDecoder(fis);
+		// Old method of input
+		//XMLDecoder decoder = new XMLDecoder(ClassLoader.getSystemResourceAsStream(filename));
 		Chemicals chemicals = (Chemicals)decoder.readObject();
 		decoder.close();
 		return chemicals;
 	}
 	
 	public void writeByXML(String filename) throws IOException {
-		FileOutputStream fos = new FileOutputStream(ClassLoader.getSystemResource(filename).getPath());
+		// Maven output to filename
+		FileOutputStream fos = new FileOutputStream(new File(filename));
+		// Old method of output
+		//FileOutputStream fos = new FileOutputStream(ClassLoader.getSystemResource(filename).getPath(););
 		XMLEncoder encoder = new XMLEncoder(fos);
 		encoder.writeObject(this);
 		encoder.flush();

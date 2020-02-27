@@ -17,24 +17,19 @@ import parisWork.Chemicals;
 import parisWork.Mixture;
 import unifac.UNIFACforPARIS;
 
-public class MixtureTestViscosity {
+public class MixtureBoilingPointTest {
 
-	
 	/**
-	 * In this test it checks how well our routine predicts viscosity of mixtures
+	 * In this test it checks how well our routine predicts boiling point of mixtures
 	 * 
-	 * Experimental mixture data taken from:
-	 * 
-	 * Petrino, P.J.; Gaston-Bonhomme; Chevalier, J.L.E. "Viscosity and Density
-	 * of Binary Liquid Mixtures of Hydrocarbons, Esters, Ketones, and Normal
-	 * Chloroalkanes," J. Chem. Eng. Data, 1995, 40, 136-140
 	 */
 	@Test
-	public void testCalculateMixtureViscosity() {
+	public void testCalculateMixtureBP() {
 		
 		
 		DecimalFormat df=new DecimalFormat("0.00");
-		double largestError = 25.0;
+		double largestError = 1.0;
+		
 		
 		double meanAbsPercentErrorOverall=0;
 		int mixtureCount=0;
@@ -42,11 +37,11 @@ public class MixtureTestViscosity {
 		try {
 			
 			String folder="TestResults";
-			File F=new File(folder);
-			if (!F.exists()) F.mkdir();
+			String property="boiling point";
 
-			String property="viscosity";
-
+			File folderOverall=new File(folder);
+			if (!folderOverall.exists()) folderOverall.mkdir();
+			
 			String mixtureFileName="mixture data "+property+".txt";
 
 			String outputFolder=folder+"/"+property+" plots";
@@ -56,21 +51,23 @@ public class MixtureTestViscosity {
 			
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.xml").getFile());
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.txt").getFile());
-			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.txt");
-			
+			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
+
 //			this.addMissingChemicals(allChemicals);
-//			this.addAntoineConstants(allChemicals);
+			
 
 			//Use pure component values from papers since we want to see
 			// how well the mixture values are calculated not the pure comp values
-			this.usePureComponentValuesFromPapers(allChemicals);
+//			this.usePureComponentValuesFromPapers(allChemicals);
 			
 //			System.out.println("\n"+property+"\nComp1\tComp2\tMAE");
 			
-			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/MixtureTest/"+mixtureFileName);
+			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat3("src/test/java/MixtureTest/"+mixtureFileName);
 			
 			for (int i=0;i<dataSets.size();i++) {
 				MixtureDataSet mds=dataSets.get(i);
+				
+				double Pressure_kPa=Units.pressureConvertFrom(mds.pressure_mmHg,Units.COMMON);
 				
 				Chemical pc1=allChemicals.getBySynonym(mds.nameChemical1);
 				Chemical pc2=allChemicals.getBySynonym(mds.nameChemical2);
@@ -110,7 +107,8 @@ public class MixtureTestViscosity {
 					mixture.calculateMixtureProperties(25+273.15);
 					
 					//Store predicted value in array:
-					y[j]=Units.viscosityConvertTo(mixture.getViscosity(), Units.COMMON);;
+//					y[j]=Units.tempConvertTo(mixture.getBoilingPoint(),Units.COMMON);
+					y[j]=mixture.getBoilingPoint();
 					
 					meanAbsPercentError+=Math.abs((y[j]-mds.yexp[j])/mds.yexp[j]*100);
 
@@ -159,51 +157,29 @@ public class MixtureTestViscosity {
 		
 	}
 	
-	private void usePureComponentValuesFromPapers(Chemicals chemicals) {
-		Chemical chemical;
-		
-
-		
-		chemical=chemicals.getBySynonym("cyclohexane");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.888322,Units.COMMON));
-
-		chemical=chemicals.getBySynonym("methylcyclohexane");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.67355936,Units.COMMON));
-
-		chemical=chemicals.getBySynonym("1,2-dimethylcyclohexane");
-		chemical.setViscosity(Units.viscosityConvertFrom(1.0133262,Units.COMMON));
-
-		chemical=chemicals.getBySynonym("benzene");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.59775496,Units.COMMON));
-
-		chemical=chemicals.getBySynonym("toluene");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.5466852,Units.COMMON));
-
-		chemical=chemicals.getBySynonym("o-xylene");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.74759584,Units.COMMON));
-		
-		chemical=chemicals.getBySynonym("p-xylene");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.59740875,Units.COMMON));
-
-		chemical=chemicals.getBySynonym("1-chlorohexane");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.68598592,Units.COMMON));
-			
-		chemical=chemicals.getBySynonym("1-chlorohexadecane");
-		chemical.setViscosity(Units.viscosityConvertFrom(5.4267135,Units.COMMON));
-			
-		chemical=chemicals.getBySynonym("ethyl acetate");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.42180872,Units.COMMON));
-			
-		chemical=chemicals.getBySynonym("propyl propionate");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.62256805,Units.COMMON));
-			
-		chemical=chemicals.getBySynonym("acetone");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.30061857,Units.COMMON));
-		
-		chemical=chemicals.getBySynonym("methyl ethyl ketone");
-		chemical.setViscosity(Units.viscosityConvertFrom(0.37389296,Units.COMMON));
-		
-
-	}
+//	private void addMissingChemicals(Chemicals allChemicals) {
+//		
+//		Chemical chemical2=new Chemical();
+//		String name2="water";
+//		Vector <String> synonyms2=new Vector<String>();
+//		synonyms2.add(name2);
+//		chemical2.setName(name2);
+//		chemical2.setCAS("75-65-0");
+//		chemical2.setSynonyms(synonyms2);
+//		chemical2.setMolecularWeight(18.04);
+//		chemical2.setDensity(Units.densityConvertFrom(1,Units.COMMON));
+//		chemical2.setSurfaceTension(Units.surfaceTensionConvertFrom(71.15,Units.COMMON));
+//		chemical2.setBoilingPoint(373.15);
+//		chemical2.setAntoineConstantA(8.07131);
+//		chemical2.setAntoineConstantB(1730.63);
+//		chemical2.setAntoineConstantC(233.426);
+//		chemical2.setAntoineTmin(1+273.15);
+//		chemical2.setAntoineTmax(100+273.15);
+//		chemical2.setAntoineSource("DECHEMA");
+//		
+//		allChemicals.add(chemical2);	
+//
+//		
+//	}
 
 }

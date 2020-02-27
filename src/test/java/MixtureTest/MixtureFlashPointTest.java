@@ -17,7 +17,7 @@ import parisWork.Chemicals;
 import parisWork.Mixture;
 import unifac.UNIFACforPARIS;
 
-public class MixtureTestFlashPoint {
+public class MixtureFlashPointTest {
 
 	/**
 	 * Adds chemicals needed for test that arent in the chemical db
@@ -100,7 +100,7 @@ public class MixtureTestFlashPoint {
 			
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.xml").getFile());
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.txt").getFile());
-			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.txt");
+			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
 			
 //			this.addMissingChemicals(allChemicals);
 			this.addAntoineConstants(allChemicals);
@@ -111,7 +111,7 @@ public class MixtureTestFlashPoint {
 			
 //			System.out.println("\n"+property+"\nComp1\tComp2\tMAE");
 			
-			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/MixtureTest/"+mixtureFileName);
+			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/test/java/MixtureTest/"+mixtureFileName);
 			
 			for (int i=0;i<dataSets.size();i++) {
 				MixtureDataSet mds=dataSets.get(i);

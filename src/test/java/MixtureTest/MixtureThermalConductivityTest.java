@@ -17,7 +17,7 @@ import parisWork.Chemicals;
 import parisWork.Mixture;
 import unifac.UNIFACforPARIS;
 
-public class MixtureTestThermalConductivity {
+public class MixtureThermalConductivityTest {
 
 	/**
 	 * Adds chemicals needed for test that arent in the chemical db
@@ -157,7 +157,7 @@ public class MixtureTestThermalConductivity {
 			
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.xml").getFile());
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.txt").getFile());
-			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.txt");
+			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
 			
 			this.addMissingChemicals(allChemicals);
 
@@ -167,7 +167,7 @@ public class MixtureTestThermalConductivity {
 			
 //			System.out.println("\n"+property+"\nComp1\tComp2\tMAE");
 			
-			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat2("src/MixtureTest/"+mixtureFileName);
+			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat2("src/test/java/MixtureTest/"+mixtureFileName);
 			
 			for (int i=0;i<dataSets.size();i++) {
 				MixtureDataSet mds=dataSets.get(i);

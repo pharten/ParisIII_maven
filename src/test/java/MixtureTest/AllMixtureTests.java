@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
@@ -24,14 +26,14 @@ import unifac.UNIFACforPARIS;
 
 @RunWith(Suite.class)
 
-@SuiteClasses({ MixtureTestSurfaceTension.class, MixtureTestFlashPoint.class,
-		MixtureTestThermalConductivity.class, MixtureTestDensity.class,
-		MixtureTestViscosity.class,MixtureTestVaporPressure.class,
-		MixtureTestBoilingPoint.class, MixtureTestOnePhase.class, TieLineTest.class})
+@SuiteClasses({ MixtureSurfaceTensionTest.class, MixtureFlashPointTest.class,
+		MixtureThermalConductivityTest.class, MixtureDensityTest.class,
+		MixtureViscosityTest.class,MixtureVaporPressureTest.class,
+		MixtureBoilingPointTest.class, MixtureOnePhaseTest.class, TieLineTest.class})
 		
-		//MixtureTestMeltingPoint.class
+		//MixtureMeltingPointTest.class
 		
-//@SuiteClasses({ MixtureTestDensity.class })
+//@SuiteClasses({ MixtureDensityTest.class })
 
 public class AllMixtureTests {
 
@@ -49,7 +51,7 @@ public class AllMixtureTests {
 		Vector<MixtureDataSet>dataSets=new Vector<MixtureDataSet>();
 		
 		try {
-			filepath = "ParisIIITest/" + filepath;
+			//filepath = "ParisIIITest/" + filepath;
 			BufferedReader br = new BufferedReader(new FileReader(filepath));
 
 			while (true) {
@@ -131,7 +133,7 @@ public class AllMixtureTests {
 		Vector<MixtureDataSet>dataSets=new Vector<MixtureDataSet>();
 		
 		try {
-			filepath = "ParisIIITest/" + filepath;
+			//filepath = "ParisIIITest/" + filepath;
 			BufferedReader br = new BufferedReader(new FileReader(filepath));
 
 			while (true) {
@@ -278,7 +280,7 @@ public class AllMixtureTests {
 		Vector<MixtureDataSet>dataSets=new Vector<MixtureDataSet>();
 		
 		try {
-			filepath = "ParisIIITest/" + filepath;
+			//filepath = "ParisIIITest/" + filepath;
 			BufferedReader br = new BufferedReader(new FileReader(filepath));
 
 			while (true) {
@@ -369,7 +371,7 @@ public class AllMixtureTests {
 		Vector<MixtureDataSet>dataSets=new Vector<MixtureDataSet>();
 		
 		try {
-			filepath = "ParisIIITest/" + filepath;
+			//filepath = "ParisIIITest/" + filepath;
 			BufferedReader br = new BufferedReader(new FileReader(filepath));
 
 			String Line1=br.readLine(); //"		Mole fraction component 1"

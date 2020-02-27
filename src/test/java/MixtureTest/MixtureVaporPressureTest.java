@@ -17,18 +17,19 @@ import parisWork.Chemicals;
 import parisWork.Mixture;
 import unifac.UNIFACforPARIS;
 
-public class MixtureTestDensity {
+public class MixtureVaporPressureTest {
 
 	
 	/**
-	 * In this test it checks how well our routine predicts density of mixtures
+	 * In this test it checks how well our routine predicts vapor pressure of mixtures
 	 * 
 	 */
 	@Test
-	public void testCalculateMixtureDensity() {
-
+	public void testCalculateMixtureVP() {
+		
+		
 		DecimalFormat df=new DecimalFormat("0.00");
-		double largestError = 2.0;
+		double largestError = 10.0;
 		
 		double meanAbsPercentErrorOverall=0;
 		int mixtureCount=0;
@@ -36,10 +37,10 @@ public class MixtureTestDensity {
 		try {
 			
 			String folder="TestResults";
+			String property="vapor pressure";
 			File F=new File(folder);
 			if (!F.exists()) F.mkdir();
 
-			String property="density";
 
 			String mixtureFileName="mixture data "+property+".txt";
 
@@ -48,31 +49,22 @@ public class MixtureTestDensity {
 			File pFolder=new File(outputFolder);
 			if (!pFolder.exists()) pFolder.mkdir();
 			
-			if (!pFolder.exists()) pFolder.mkdir();
-			else {
-				File [] files=pFolder.listFiles();
-				for (int i=0;i<files.length;i++) {
-					files[i].delete();
-				}
-			}
-			
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.xml").getFile());
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.txt").getFile());
-			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.txt");
+			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
 			
-//			this.addMissingChemicals(allChemicals);
-//			this.addAntoineConstants(allChemicals);
-
 			//Use pure component values from papers since we want to see
 			// how well the mixture values are calculated not the pure comp values
-			this.usePureComponentValuesFromPapers(allChemicals);
+//			this.usePureComponentValuesFromPapers(allChemicals);
 			
 //			System.out.println("\n"+property+"\nComp1\tComp2\tMAE");
 			
-			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/MixtureTest/"+mixtureFileName);
+			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat3("src/test/java/MixtureTest/"+mixtureFileName);
 			
 			for (int i=0;i<dataSets.size();i++) {
 				MixtureDataSet mds=dataSets.get(i);
+				
+				double tempK=Units.tempConvertFrom(mds.temperatureC, Units.COMMON);
 				
 				Chemical pc1=allChemicals.getBySynonym(mds.nameChemical1);
 				Chemical pc2=allChemicals.getBySynonym(mds.nameChemical2);
@@ -109,10 +101,10 @@ public class MixtureTestDensity {
 					mixture.setWghtFractions(mixture.calculateMassFractions(molFractions));
 
 					//Faster to just calc TC instead of all properties:
-					mixture.calculateMixtureProperties(25+273.15);
+					mixture.calculateMixtureProperties(tempK);
 					
 					//Store predicted value in array:
-					y[j]=mixture.getDensity();
+					y[j]=Units.pressureConvertTo(mixture.getVaporPressure(),Units.COMMON);
 					
 					meanAbsPercentError+=Math.abs((y[j]-mds.yexp[j])/mds.yexp[j]*100);
 
@@ -161,56 +153,6 @@ public class MixtureTestDensity {
 		
 	}
 	
-	public void usePureComponentValuesFromPapers(Chemicals chemicals) {
-		Chemical chemical;
 
-		chemical=chemicals.getBySynonym("cyclohexane");
-		chemical.setDensity(773.8);
-
-		chemical=chemicals.getBySynonym("methylcyclohexane");
-		chemical.setDensity(764.8);
-		
-		
-		chemical=chemicals.getBySynonym("1,2-dimethylcyclohexane");
-//		chemical=chemicals.getBySynonym("cis-1,2-dimethylcyclohexane");
-		chemical.setDensity(792.9);
-
-		
-		chemical=chemicals.getBySynonym("benzene");
-		chemical.setDensity(873.4);
-
-		chemical=chemicals.getBySynonym("toluene");
-		chemical.setDensity(861.6);
-
-		chemical=chemicals.getBySynonym("o-xylene");
-		chemical.setDensity(875.2);
-
-		chemical=chemicals.getBySynonym("p-xylene");
-		chemical.setDensity(856.5);
-
-		chemical=chemicals.getBySynonym("1-chlorohexane");
-		chemical.setDensity(873.2);
-
-		chemical=chemicals.getBySynonym("1-chlorohexadecane");
-		chemical.setDensity(860.7);
-		
-		chemical=chemicals.getBySynonym("ethyl acetate");
-		chemical.setDensity(894.8);
-
-		chemical=chemicals.getBySynonym("propyl propionate");
-		chemical.setDensity(875.5);
-
-		chemical=chemicals.getBySynonym("acetone");
-		chemical.setDensity(784.7);
-
-		chemical=chemicals.getBySynonym("methyl ethyl ketone");
-		chemical.setDensity(799.6);
-		
-		
-
-		
-		
-
-	}
 
 }

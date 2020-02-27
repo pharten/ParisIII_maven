@@ -15,7 +15,7 @@ public class MixtureTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		allChemicals = Chemicals.readFromFile("data/Chemicals.xml");
+		allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
 	}
 
 	@After

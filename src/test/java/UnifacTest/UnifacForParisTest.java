@@ -55,7 +55,7 @@ public class UnifacForParisTest {
 		int count=0;
 
 		try {
-			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.xml");
+			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
 		
 			InputStream in = getClass().getResourceAsStream("krummen 2000.txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
