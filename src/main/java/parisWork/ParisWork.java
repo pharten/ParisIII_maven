@@ -97,7 +97,7 @@ public class ParisWork extends java.lang.Object implements Serializable {
 			
 			ParisInit parisInit = new ParisInit(window.shell);
 			
-			concurrentTask = new FutureTask<Chemicals>(new ChemicalsConcurrent("data/Chemicals.xml"));
+			concurrentTask = new FutureTask<Chemicals>(new ChemicalsConcurrent("src/main/java/data/Chemicals.xml"));
 			concurrentTask.run();
 
 			if (parisInit.open()==SWT.OK) {
