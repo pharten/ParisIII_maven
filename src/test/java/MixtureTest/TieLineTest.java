@@ -25,7 +25,7 @@ public class TieLineTest {
 			double tempK=25.0+273.15;
 			boolean result = true;
 
-			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
+			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.xml");
 
 			Chemical pc1=allChemicals.getBySynonym("propanol");
 			Chemical pc2=allChemicals.getBySynonym("water");

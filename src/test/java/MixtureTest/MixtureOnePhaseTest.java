@@ -32,7 +32,7 @@ public class MixtureOnePhaseTest {
 			
 			double tempK=25.0+273.15;
 
-			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
+			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.xml");
 
 			Chemical pc1=allChemicals.getBySynonym("ethanol");
 			Chemical pc2=allChemicals.getBySynonym("water");

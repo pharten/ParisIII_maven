@@ -24,6 +24,7 @@ import parisWork.Chemicals;
 import parisWork.Mixture;
 import unifac.UNIFACforPARIS;
 
+/*
 @RunWith(Suite.class)
 
 @SuiteClasses({ MixtureSurfaceTensionTest.class, MixtureFlashPointTest.class,
@@ -34,6 +35,7 @@ import unifac.UNIFACforPARIS;
 		//MixtureMeltingPointTest.class
 		
 //@SuiteClasses({ MixtureDensityTest.class })
+ */
 
 public class AllMixtureTests {
 

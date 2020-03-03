@@ -51,7 +51,7 @@ public class MixtureVaporPressureTest {
 			
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.xml").getFile());
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.txt").getFile());
-			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
+			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.txt");
 			
 			//Use pure component values from papers since we want to see
 			// how well the mixture values are calculated not the pure comp values

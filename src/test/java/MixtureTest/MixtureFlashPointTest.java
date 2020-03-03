@@ -100,7 +100,7 @@ public class MixtureFlashPointTest {
 			
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.xml").getFile());
 //			Chemicals allChemicals = Chemicals.readFromFile(getClass().getResource("/data/Chemicals.txt").getFile());
-			Chemicals allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.txt");
+			Chemicals allChemicals = Chemicals.readFromFile("data/Chemicals.txt");
 			
 //			this.addMissingChemicals(allChemicals);
 			this.addAntoineConstants(allChemicals);

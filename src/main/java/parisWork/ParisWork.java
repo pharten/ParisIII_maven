@@ -97,7 +97,7 @@ public class ParisWork extends java.lang.Object implements Serializable {
 			
 			ParisInit parisInit = new ParisInit(window.shell);
 			
-			concurrentTask = new FutureTask<Chemicals>(new ChemicalsConcurrent("src/main/java/data/Chemicals.xml"));
+			concurrentTask = new FutureTask<Chemicals>(new ChemicalsConcurrent("data/Chemicals.xml"));
 			concurrentTask.run();
 
 			if (parisInit.open()==SWT.OK) {
@@ -130,7 +130,7 @@ public class ParisWork extends java.lang.Object implements Serializable {
 			allChemicals = (Chemicals) concurrentTask.get();
 		} else {
 //			Chemicals.addWaterSolvent("data/Chemicals.txt");  // test this before using it
-			allChemicals = Chemicals.readFromFile("src/main/java/data/Chemicals.xml");
+			allChemicals = Chemicals.readFromFile("data/Chemicals.xml");
 		}
 		allChemicals.correctVaporPressureConstants();
 		//		allChemicals.convertFromCommonToSI();
