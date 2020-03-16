@@ -1,5 +1,6 @@
 package parisWork;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -739,8 +740,12 @@ public class ParisWork extends java.lang.Object implements Serializable {
 						myURL = file1.toURI().toURL();
 					}
 
-					BrowserLauncher launcher = new BrowserLauncher(null);
-					launcher.openURLinBrowser(myURL.toExternalForm());
+					if(Desktop.isDesktopSupported()){
+						Desktop.getDesktop().browse(myURL.toURI());
+					} else {
+						BrowserLauncher launcher = new BrowserLauncher(null);
+						launcher.openURLinBrowser(myURL.toExternalForm());
+					}
 
 				} catch (Exception ex) {
 					ex.printStackTrace();
