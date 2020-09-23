@@ -12,8 +12,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.Serializable;
 import java.lang.reflect.Field;
+import java.net.URL;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -1012,6 +1014,67 @@ public class Chemicals extends Vector<Chemical> implements Serializable, Cloneab
 		
 	}
 	
+	public static void updateGWPFromFile(String filename1, String filename2) throws Exception {
+		String line, lineSplit[];
+		
+		InputStreamReader reader1 = new InputStreamReader(ClassLoader.getSystemResourceAsStream(filename1));
+		BufferedReader buf1 = new BufferedReader(reader1);
+		
+		int lineno = 0;
+		Vector<String> sCAS = new Vector<String>();
+		Vector<String> sGWP = new Vector<String>();
+		
+		String header = buf1.readLine();	// read the column header line
+		lineno++;
+			
+		while ((line = buf1.readLine()) != null) {
+			lineno++;
+			lineSplit = line.split(",",10);
+			sCAS.add(lineSplit[0].trim());
+			sGWP.add(lineSplit[1].trim());
+		}
+		buf1.close();
+		
+		InputStreamReader reader2 = new InputStreamReader(ClassLoader.getSystemResourceAsStream(filename2));
+		BufferedReader buf2 = new BufferedReader(reader2);
+		
+		String outputBuffer = new String();
+		
+		lineno = 0;
+		header = buf2.readLine();	// read the column header
+		fieldNames=header.split("\t");
+		outputBuffer = outputBuffer.concat(header+"\n");
+		lineno++;
+		
+		int casCol = getColumnNumber(fieldNames,"CAS");
+		int gwpCol = getColumnNumber(fieldNames,"GWP");
+		
+		while ((line = buf2.readLine()) != null) {
+			lineno++;
+			
+			values = line.split("\t");		
+			for (int i=0; i<sCAS.size(); i++) {
+				if (values[casCol].matches(sCAS.get(i))) {
+					values[gwpCol] = sGWP.get(i);
+					System.out.println("lineno = "+lineno+", CASnum = "+sCAS.get(i)+", GWP = "+sGWP.get(i));
+					System.out.println(line);
+					line = String.join("\t",values);
+					System.out.println(line);
+					break;					
+				} 
+			}
+			outputBuffer = outputBuffer.concat(line+"\n");
+			
+		}
+		reader2.close();
+		buf2.close();
+		
+		FileWriter fileWriter = new FileWriter(ClassLoader.getSystemResource(filename2).toURI().getPath());
+		fileWriter.write(outputBuffer);	
+		fileWriter.close();
+		
+	}
+	
 	public void addPropertyDataFromFile(String fileName) throws Exception {
 		String line, lineSplit[];
 		
@@ -1210,6 +1273,17 @@ public class Chemicals extends Vector<Chemical> implements Serializable, Cloneab
 //		//*****************************************************************
 //		chemicals.testReadFromFiles();
 //
+//	}
+	
+//	public static void main(String[] args) {
+//	
+//		try {
+//			Chemicals.updateGWPFromFile("data/GWPupdates.txt", "data/Chemicals.txt");
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		//*****************************************************************
 //	}
 
 }
