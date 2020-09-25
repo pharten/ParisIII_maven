@@ -44,32 +44,32 @@
      <double>946.7672437543391</double>
     </void>
     <void index="2">
-     <double>334.86304839457847</double>
+     <double>334.32050036851336</double>
     </void>
     <void index="3">
-     <double>25.236094235726345</double>
+     <double>25.192035075628347</double>
     </void>
     <void index="4">
-     <double>0.02</double>
+     <double>0.02563921156452839</double>
     </void>
     <void index="5">
      <double>5.628880263771708E-4</double>
     </void>
     <void index="6">
-     <double>0.13</double>
+     <double>0.13509100616988676</double>
     </void>
     <void index="7">
-     <double>281.712</double>
+     <double>281.75207144022175</double>
     </void>
    </array>
   </void>
   <void property="mixture">
    <object class="parisWork.Mixture" id="Mixture0">
     <void property="airIndex">
-     <double>1.0629862461611048</double>
+     <double>0.8827377875386785</double>
     </void>
     <void property="boilingPoint">
-     <double>334.86304839457847</double>
+     <double>334.32050036851336</double>
     </void>
     <void id="Vector0" property="chemicals">
      <void method="add">
@@ -78,19 +78,19 @@
         <string>108-88-3</string>
        </void>
        <void property="PCOP">
-        <double>1.3480080652206625</double>
+        <double>1.352015029471396</double>
        </void>
        <void property="airIndex">
-        <double>0.5402033206635788</double>
+        <double>0.47732025016077123</double>
        </void>
        <void property="antoineConstantA">
-        <double>6.26</double>
+        <double>6.26110302</double>
        </void>
        <void property="antoineConstantB">
-        <double>1457.28</double>
+        <double>1457.2871</double>
        </void>
        <void property="antoineConstantC">
-        <double>-41.32</double>
+        <double>-41.323</double>
        </void>
        <void property="antoineSource">
         <string>Yaws</string>
@@ -102,7 +102,7 @@
         <double>178.18</double>
        </void>
        <void property="aquaticTox">
-        <double>0.012362946203617359</double>
+        <double>0.01233290646515931</double>
        </void>
        <void property="boilingPoint">
         <double>383.75</double>
@@ -117,7 +117,7 @@
         <string>Exp</string>
        </void>
        <void property="environmentalIndex">
-        <double>14.480450123343154</double>
+        <double>12.79483448347623</double>
        </void>
        <void property="flashPoint">
         <double>283.15</double>
@@ -129,40 +129,40 @@
         <string>C7H8</string>
        </void>
        <void property="htoxIngestion">
-        <double>0.7646277981386643</double>
+        <double>0.594086916035177</double>
        </void>
        <void property="htoxInhalation">
-        <double>0.006463416967021808</double>
+        <double>0.006445128688336862</double>
        </void>
        <void property="infDilActCoef_acetone">
-        <double>1.55</double>
+        <double>1.5575</double>
        </void>
        <void property="infDilActCoef_benzene">
-        <double>0.99</double>
+        <double>0.9977</double>
        </void>
        <void property="infDilActCoef_cis_2_heptene">
-        <double>1.54</double>
+        <double>1.5479</double>
        </void>
        <void property="infDilActCoef_diethyl_ether">
-        <double>0.9</double>
+        <double>0.9046</double>
        </void>
        <void property="infDilActCoef_dimethyl_disulfide">
-        <double>1.02</double>
+        <double>1.0217</double>
        </void>
        <void property="infDilActCoef_ethanol">
-        <double>13.4</double>
+        <double>13.4033</double>
        </void>
        <void property="infDilActCoef_n_heptadecane">
-        <double>1.32</double>
+        <double>1.3296</double>
        </void>
        <void property="infDilActCoef_n_propyl_chloride">
-        <double>0.92</double>
+        <double>0.9202</double>
        </void>
        <void property="infDilActCoef_n_propylamine">
-        <double>1.53</double>
+        <double>1.5358</double>
        </void>
        <void property="infDilActCoef_water">
-        <double>656.22</double>
+        <double>656.2281</double>
        </void>
        <void property="meltingPoint">
         <double>178.25</double>
@@ -177,13 +177,13 @@
         <string>methylbenzene</string>
        </void>
        <void property="omega">
-        <double>0.26</double>
+        <double>0.264</double>
        </void>
        <void property="pc">
         <double>41.77</double>
        </void>
        <void property="surfaceTension">
-        <double>0.02</double>
+        <double>0.02793</double>
        </void>
        <void property="surfaceTensionSource">
         <string>Exp</string>
@@ -296,10 +296,10 @@
         <double>597.39</double>
        </void>
        <void property="terrestrialTox">
-        <double>0.7646277981386643</double>
+        <double>0.594086916035177</double>
        </void>
        <void property="thermalConductivity">
-        <double>0.13</double>
+        <double>0.1331</double>
        </void>
        <void property="thermalConductivitySource">
         <string>Exp</string>
@@ -324,22 +324,22 @@
         <string>75-09-2</string>
        </void>
        <void property="GWP">
-        <double>0.004682430850530117</double>
+        <double>0.005549687959050737</double>
        </void>
        <void property="PCOP">
-        <double>0.012254618774733295</double>
+        <double>0.013238225129910316</double>
        </void>
        <void property="airIndex">
-        <double>1.9485695298546577</double>
+        <double>1.5659368227755985</double>
        </void>
        <void property="antoineConstantA">
-        <double>6.23</double>
+        <double>6.23954302</double>
        </void>
        <void property="antoineConstantB">
-        <double>1152.41</double>
+        <double>1152.4136</double>
        </void>
        <void property="antoineConstantC">
-        <double>-40.7</double>
+        <double>-40.708</double>
        </void>
        <void property="antoineSource">
         <string>Yaws</string>
@@ -351,7 +351,7 @@
         <double>178.01</double>
        </void>
        <void property="aquaticTox">
-        <double>0.001323124677310219</double>
+        <double>0.001319909722023739</double>
        </void>
        <void property="boilingPoint">
         <double>313.15</double>
@@ -366,7 +366,7 @@
         <string>Exp</string>
        </void>
        <void property="environmentalIndex">
-        <double>3.409996677245651</double>
+        <double>2.7403894398572977</double>
        </void>
        <void property="flashPoint">
         <double>312.65</double>
@@ -378,40 +378,40 @@
         <string>CH2Cl2</string>
        </void>
        <void property="htoxIngestion">
-        <double>0.3040100246809429</double>
+        <double>0.23620430547533705</double>
        </void>
        <void property="htoxInhalation">
-        <double>0.05571911178467076</double>
+        <double>0.055561454209800534</double>
        </void>
        <void property="infDilActCoef_acetone">
-        <double>0.43</double>
+        <double>0.4301</double>
        </void>
        <void property="infDilActCoef_benzene">
-        <double>0.87</double>
+        <double>0.8749</double>
        </void>
        <void property="infDilActCoef_cis_2_heptene">
-        <double>2.41</double>
+        <double>2.4126</double>
        </void>
        <void property="infDilActCoef_diethyl_ether">
-        <double>0.76</double>
+        <double>0.7676</double>
        </void>
        <void property="infDilActCoef_dimethyl_disulfide">
-        <double>0.93</double>
+        <double>0.9397</double>
        </void>
        <void property="infDilActCoef_ethanol">
-        <double>6.27</double>
+        <double>6.2733</double>
        </void>
        <void property="infDilActCoef_n_heptadecane">
-        <double>3.97</double>
+        <double>3.9734</double>
        </void>
        <void property="infDilActCoef_n_propyl_chloride">
-        <double>1.21</double>
+        <double>1.2124</double>
        </void>
        <void property="infDilActCoef_n_propylamine">
-        <double>1.04</double>
+        <double>1.047</double>
        </void>
        <void property="infDilActCoef_water">
-        <double>1.77</double>
+        <double>1.7743</double>
        </void>
        <void property="meltingPoint">
         <double>178.05</double>
@@ -426,13 +426,13 @@
         <string>bis(chloranyl)methane</string>
        </void>
        <void property="omega">
-        <double>0.19</double>
+        <double>0.192</double>
        </void>
        <void property="pc">
         <double>57.23</double>
        </void>
        <void property="surfaceTension">
-        <double>0.02</double>
+        <double>0.0272</double>
        </void>
        <void property="surfaceTensionSource">
         <string>Exp</string>
@@ -566,10 +566,10 @@
         <double>517.18</double>
        </void>
        <void property="terrestrialTox">
-        <double>0.3040100246809429</double>
+        <double>0.23620430547533705</double>
        </void>
        <void property="thermalConductivity">
-        <double>0.13</double>
+        <double>0.13923</double>
        </void>
        <void property="thermalConductivitySource">
         <string>Exp</string>
@@ -594,19 +594,19 @@
         <string>67-63-0</string>
        </void>
        <void property="PCOP">
-        <double>0.19607390039573272</double>
+        <double>0.20225066170696315</double>
        </void>
        <void property="airIndex">
-        <double>0.11757546632985409</double>
+        <double>0.10657961151417451</double>
        </void>
        <void property="antoineConstantA">
-        <double>6.95</double>
+        <double>6.95546302</double>
        </void>
        <void property="antoineConstantB">
-        <double>1483.3</double>
+        <double>1483.3042</double>
        </void>
        <void property="antoineConstantC">
-        <double>-55.73</double>
+        <double>-55.737</double>
        </void>
        <void property="antoineSource">
         <string>Yaws</string>
@@ -618,7 +618,7 @@
         <double>185.28</double>
        </void>
        <void property="aquaticTox">
-        <double>4.2238563256160894E-5</double>
+        <double>4.2135931134968977E-5</double>
        </void>
        <void property="boilingPoint">
         <double>355.45</double>
@@ -633,7 +633,7 @@
         <string>Exp</string>
        </void>
        <void property="environmentalIndex">
-        <double>1.9691461365078458</double>
+        <double>1.7849882870535096</double>
        </void>
        <void property="flashPoint">
         <double>284.82</double>
@@ -645,40 +645,40 @@
         <string>C3H8O</string>
        </void>
        <void property="htoxIngestion">
-        <double>0.09638329788288895</double>
+        <double>0.074886181663724</double>
        </void>
        <void property="htoxInhalation">
-        <double>0.004946492576802405</double>
+        <double>0.004932496445155762</double>
        </void>
        <void property="infDilActCoef_acetone">
-        <double>2.24</double>
+        <double>2.2424</double>
        </void>
        <void property="infDilActCoef_benzene">
-        <double>3.92</double>
+        <double>3.9233</double>
        </void>
        <void property="infDilActCoef_cis_2_heptene">
-        <double>5.89</double>
+        <double>5.8914</double>
        </void>
        <void property="infDilActCoef_diethyl_ether">
-        <double>2.64</double>
+        <double>2.6409</double>
        </void>
        <void property="infDilActCoef_dimethyl_disulfide">
-        <double>0.21</double>
+        <double>0.2162</double>
        </void>
        <void property="infDilActCoef_ethanol">
-        <double>1.01</double>
+        <double>1.0189</double>
        </void>
        <void property="infDilActCoef_n_heptadecane">
-        <double>32.08</double>
+        <double>32.0806</double>
        </void>
        <void property="infDilActCoef_n_propyl_chloride">
-        <double>2.81</double>
+        <double>2.8174</double>
        </void>
        <void property="infDilActCoef_n_propylamine">
-        <double>0.31</double>
+        <double>0.3123</double>
        </void>
        <void property="infDilActCoef_water">
-        <double>3.81</double>
+        <double>3.8149</double>
        </void>
        <void property="meltingPoint">
         <double>183.65</double>
@@ -693,16 +693,16 @@
         <string>propan-2-ol</string>
        </void>
        <void property="omega">
-        <double>0.56</double>
+        <double>0.563</double>
        </void>
        <void property="pc">
         <double>48.88</double>
        </void>
        <void property="replacementScore">
-        <double>1.200000007490025E10</double>
+        <double>1.3000000076078007E10</double>
        </void>
        <void property="surfaceTension">
-        <double>0.02</double>
+        <double>0.02093</double>
        </void>
        <void property="surfaceTensionSource">
         <string>Exp</string>
@@ -905,10 +905,10 @@
         <double>496.83</double>
        </void>
        <void property="terrestrialTox">
-        <double>0.09638329788288895</double>
+        <double>0.074886181663724</double>
        </void>
        <void property="thermalConductivity">
-        <double>0.13</double>
+        <double>0.1344</double>
        </void>
        <void property="thermalConductivitySource">
         <string>Exp</string>
@@ -935,10 +935,10 @@
      <double>946.7672437543391</double>
     </void>
     <void property="environmentalIndex">
-     <double>7.477965420500201</double>
+     <double>6.523317169103923</double>
     </void>
     <void property="flashPoint">
-     <double>281.7117931764871</double>
+     <double>281.75207144022175</double>
     </void>
     <void property="infDilActCoef_acetone">
      <double>0.9353317462928935</double>
@@ -974,13 +974,13 @@
      <double>79.22678136589266</double>
     </void>
     <void property="surfaceTension">
-     <double>0.02</double>
+     <double>0.02563921156452839</double>
     </void>
     <void property="thermalConductivity">
-     <double>0.13</double>
+     <double>0.13509100616988676</double>
     </void>
     <void property="vaporPressure">
-     <double>25.236094235726345</double>
+     <double>25.192035075628347</double>
     </void>
     <void property="viscosity">
      <double>5.628880263771708E-4</double>
