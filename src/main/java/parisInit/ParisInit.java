@@ -98,7 +98,7 @@ public class ParisInit extends Dialog {
 		
 		Text txtSolventDesignSoftware = new Text(composite, SWT.CENTER | SWT.MULTI);
 		txtSolventDesignSoftware.setEditable(false);
-		txtSolventDesignSoftware.setText("Solvent Design Software from US EPA\r\nVersion 1.4.0");
+		txtSolventDesignSoftware.setText("Solvent Design Software from US EPA\r\nVersion 1.4.1");
 		txtSolventDesignSoftware.setBounds(10, 127, 296, 40);
 		txtSolventDesignSoftware.setBackground(SWTResourceManager.getColor(SWT.COLOR_TITLE_BACKGROUND));
 
