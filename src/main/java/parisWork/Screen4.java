@@ -698,7 +698,7 @@ public class Screen4 extends Screen {
 		double time;
 		
 		Mixture sample = new Mixture(primarySolvents.get(0), secondarySolvents.get(0), massRatiosSelected[0], tempK);
-		int maxCapacity = (int) (estimateMaxCapacity(sample)*0.8);
+		int maxCapacity = (int) (estimateMaxCapacity(sample)*4.0);  // better estimate
 
 		Vector<Mixture> vMixtures = new Vector<Mixture>(maxCapacity);
 		
@@ -781,7 +781,7 @@ public class Screen4 extends Screen {
 		double time;
 		
 		Mixture sample = new Mixture(primarySolvents.get(0), secondarySolvents.get(0), tertiarySolvents.get(0), massRatiosSelected[0], tempK);
-		int maxCapacity = (int) (estimateMaxCapacity(sample)*0.8);
+		int maxCapacity = (int) (estimateMaxCapacity(sample)*4.0);  // better estimate
 
 		Vector<Mixture> vMixtures = new Vector<Mixture>(maxCapacity);
 
