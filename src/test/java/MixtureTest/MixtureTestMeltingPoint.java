@@ -24,7 +24,7 @@ public class MixtureTestMeltingPoint {
 	 * In this test it checks how well our routine predicts density of mixtures
 	 * 
 	 */
-	@Test
+//	@Test
 	public void testCalculateMixtureMeltingPoint() {
 
 		DecimalFormat df=new DecimalFormat("0.00");
@@ -69,7 +69,7 @@ public class MixtureTestMeltingPoint {
 			
 			System.out.println("\n"+property+"\nComp1\tComp2\tMAE");
 			
-			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/MixtureTest/"+mixtureFileName);
+			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/test/java/MixtureTest/"+mixtureFileName);
 			
 			for (int i=0;i<dataSets.size();i++) {
 				MixtureDataSet mds=dataSets.get(i);

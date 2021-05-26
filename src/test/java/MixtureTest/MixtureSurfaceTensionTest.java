@@ -312,7 +312,7 @@ public class MixtureSurfaceTensionTest {
 //			System.out.println("Comp1\tComp2\tMRSDUnifac\tMRSDVolFrac");
 			System.out.println("\n"+property+"\nComp1\tComp2\tMAEUnifac\tMAEVolFrac");
 			
-			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/MixtureTest/"+mixtureFileName);
+			Vector <MixtureDataSet>dataSets=AllMixtureTests.readDataFileFormat1("src/test/java/MixtureTest/"+mixtureFileName);
 			
 			for (int i=0;i<dataSets.size();i++) {
 				MixtureDataSet mds=dataSets.get(i);
