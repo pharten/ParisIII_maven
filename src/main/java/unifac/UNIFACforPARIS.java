@@ -699,12 +699,12 @@ public class UNIFACforPARIS {
 	}
 	
 	
-	public static void main(String[] args) {
-		UNIFACforPARIS u=new UNIFACforPARIS();
-		u.runUNIFACInfDilutionCalculations(298.15);
-		
-			
-	}
+//	public static void main(String[] args) {
+//		UNIFACforPARIS u=new UNIFACforPARIS();
+//		u.runUNIFACInfDilutionCalculations(298.15);
+//		
+//			
+//	}
 	
 	public double getQ (String CAS) {
 			
