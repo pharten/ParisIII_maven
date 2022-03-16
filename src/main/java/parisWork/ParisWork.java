@@ -7,9 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.Locale;
 import java.util.Vector;
-import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
 import org.eclipse.swt.widgets.Shell;
