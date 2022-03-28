@@ -726,7 +726,7 @@ public class ParisWork extends java.lang.Object implements Serializable {
 
 				try {
 
-					URL myURL = ClassLoader.getSystemResource("./UsersGuide.pdf");
+					URL myURL = ClassLoader.getSystemResource("data/UsersGuide.pdf");
 
 					if (myURL==null) {
 						File file1 = new File(strUserFolder+"UsersGuide.pdf");
